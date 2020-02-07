@@ -1,0 +1,43 @@
+@import 'zmienne';
+
+body{
+    background-color: @all;
+}
+
+.card-deck{
+    background-color: @background;
+}
+.side{
+    background: #5cb85c;
+   
+}
+.error{
+    background: @red;
+    color:@white;
+    font-size:11px;
+
+}
+ul{
+    list-style:none;
+
+}
+.nav-item{
+    text-transform: uppercase;
+    font-weight:600;
+    cursor: pointer;
+}
+.navi{
+    text-transform: uppercase;
+    font-weight:600;
+    cursor: pointer;
+    color: @white;
+    padding: 10px;
+    border-bottom: 1px solid @white;
+}
+.navi:hover{
+    background: #5cb85c;
+    transition: linear 300ms;
+}
+.navi.active{
+    background: seagreen;
+}

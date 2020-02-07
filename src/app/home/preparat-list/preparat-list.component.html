@@ -1,0 +1,41 @@
+<app-menu>
+    
+</app-menu>
+<!--body-->
+
+<div class="container ">
+    <div class="row">
+        <article class="side bg-success col-12 col-md-3 p-3 align-self-start">
+
+            <app-sidebar></app-sidebar>
+        </article>
+        <article class="col-md-9  mb-4">
+            <div class="card-deck " *ngIf="srodki&&srodki.length>0;else emptyStoreInfo">
+                <div class="col-lg-4 card-inverse  col-sm-6 mb-4" *ngFor="let preparat of srodki">
+                    <div class="card pd-3 mt-3 row no-gutters  text-center ">
+                        <div class="card-header h5 ">{{preparat?.nazwa}}</div>
+                        <img class="card-img-top img-responsive" src="{{preparat.zdjecie}}" alt="Obraz preparatu">
+                        <div class="card-body">
+                            <p class="card-text"><small> {{preparat?.przeciwPatogenom}}</small></p>
+                            <a href="#" class="card-link"><small>Szczegółowy opis</small></a>
+                            <div class="card-footer">
+                                <h4 class="card-subtitle mb-2 text-muted"><small>{{preparat?.cena}} PLN</small></h4>
+                                <a href="#" class="btn btn-primary btn-sm"><small>DO KOSZYKA</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #emptyStoreInfo>
+                <div class="no-prep-info pt-10">
+                    <p>Aktulanie brak środków na sprzedaż</p>
+                </div>
+            </ng-template>
+        </article>
+    </div>
+
+</div>
+<!--Stopka-->
+
+
+<app-footer></app-footer>
